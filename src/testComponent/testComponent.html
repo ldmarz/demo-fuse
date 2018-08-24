@@ -1,0 +1,62 @@
+<div class="row mb-4">
+  <div class="col withpadding">
+    <button type="button" class="btn btn-secondary" ng-click="$ctrl.search = 'Fire || Water'; $ctrl.fuseSearch()">Fire or Water</button>
+    <button type="button" class="btn btn-secondary" ng-click="$ctrl.search = 'Fire || Water > tackle'; $ctrl.fuseSearch()">Fire or Water but must have tackle</button>
+
+    <button type="button" class="btn btn-primary" ng-click="$ctrl.search = 'Water'; $ctrl.fuseSearch()">Water</button>
+    <button type="button" class="btn btn-success" ng-click="$ctrl.search = 'Grass'; $ctrl.fuseSearch()">Grass</button>
+    <button type="button" class="btn btn-danger" ng-click="$ctrl.search = 'Fire'; $ctrl.fuseSearch()">Fire</button>
+
+    <button type="button" class="btn btn-link" ng-click="$ctrl.search = ''; $ctrl.fuseSearch()">Clear</button>
+    
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-sm withpadding">
+    <input 
+      placeholder="fire || grass"
+      class="form-control" 
+      ng-model="$ctrl.search" 
+      ng-change="$ctrl.fuseSearch()" 
+      ng-model-options="{ updateOn: 'blur, change' }">
+  </div>
+</div>
+
+<div class="row container-table mb-6">
+  <div class="col-sm">
+    <table class="table">
+      <thead class="thead-dark table-header">
+        <tr class="row">
+          <th class="col">name</th>
+          <th class="col">type</th>
+          <th class="col">moves</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in $ctrl.dynamicItems" class="row">
+          <th class="col"> {{row.name}} </th>
+          <td class="col"> {{row.type}} </td>
+          <td class="col">{{row.moves}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row footer">
+  <div class="col withpadding">
+    <a href="https://github.com/ldmarz/demo-fuse" class='btn text-secondary'>
+      <i class="fab fa-github-square fa-5x"></i>
+    </a>
+    <a href="https://www.npmjs.com/package/fuse-operators" class='btn text-danger'>
+      <i class="fab fa-npm fa-5x"></i>
+    </a>
+        <a href="http://ldmarz.com/fuse-operators/" class='btn text-info'>
+          <i class="fab fa-wordpress-simple fa-5x"></i>
+        </a>
+  </div>
+</div>
+
+
+  
