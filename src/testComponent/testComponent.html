@@ -14,12 +14,12 @@
 
 <div class="row mb-4">
   <div class="col-sm withpadding">
-    <input 
-      placeholder="fire || grass"
-      class="form-control" 
-      ng-model="$ctrl.search" 
-      ng-change="$ctrl.fuseSearch()" 
-      ng-model-options="{ updateOn: 'blur, change' }">
+    <div class="input-group">
+      <input placeholder="fire || grass" class="form-control" ng-model="$ctrl.search" ng-change="$ctrl.fuseSearch()" ng-model-options="{ updateOn: 'blur, change' }">
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="button" id="button-addon2" ng-click="$ctrl.fuseSearch()">Apply search</button>
+      </div>
+    </div>
   </div>
 </div>
 
